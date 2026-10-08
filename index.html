@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="he" dir="rtl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>תור חי</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#5B21B6">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="תור חי">
+
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700;900&family=Heebo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f8;--card:#fff;--ink:#14213d;--mute:#5f6b85;--line:#d9e0ee;--navy:#14213d;--gold:#fcbf49;--g:#18884a;--a:#b87400;--r:#c8322e;--gb:#def3e6;--ab:#fdf0d2;--rb:#fadddc;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--card:#141e33;--ink:#eaf0fb;--mute:#9aa8c4;--line:#26334f;--gb:#10301f;--ab:#33280a;--rb:#3a1717;--g:#4cc27f;--a:#f0b13a;--r:#ff7b76}}
+:root[data-theme="dark"]{--bg:#0b1220;--card:#141e33;--ink:#eaf0fb;--mute:#9aa8c4;--line:#26334f;--gb:#10301f;--ab:#33280a;--rb:#3a1717;--g:#4cc27f;--a:#f0b13a;--r:#ff7b76}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,Arial,sans-serif;line-height:1.5}
+main{max-width:560px;margin:0 auto;padding:16px 16px 90px}
+button,input{font:inherit;color:inherit}:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hd{display:flex;align-items:center;gap:10px}.logo{width:42px;height:42px;border-radius:12px;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-family:"Frank Ruhl Libre",serif;font-weight:900;font-size:26px}
+.hd .t{flex:1}.hd b{font-family:"Frank Ruhl Libre",serif;font-size:24px;font-weight:900;line-height:1.1;display:block}.hd small{color:var(--mute);font-size:12px}
+.ib{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:18px}
+h1{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;font-size:32px;line-height:1.15;margin:16px 0}
+.loc{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin-bottom:12px}
+.loc .c{flex:1;font-weight:700}.loc small{display:block;color:var(--mute);font-weight:400;font-size:12px}
+.live{background:var(--r);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.lnk{background:none;border:0;color:var(--navy);font-weight:700;cursor:pointer;text-decoration:underline}
+.fl{display:flex;gap:6px;margin-bottom:8px;overflow-x:auto;padding-bottom:2px}
+.chip{padding:8px 13px;border-radius:99px;border:1px solid var(--line);background:var(--card);cursor:pointer;white-space:nowrap;font-weight:600;font-variant-numeric:tabular-nums}
+.chip[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.srch{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);margin-bottom:8px}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);margin-bottom:14px}
+.btn{padding:11px 16px;border-radius:12px;border:0;background:var(--navy);color:#fff;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;text-align:center}
+.btn.gold{background:var(--gold);color:#14213d}.btn.line{background:none;color:var(--ink);border:1px solid var(--line)}
+.mine{background:var(--navy);color:#fff;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:14px}
+.ticket{background:var(--gold);color:#14213d;border-radius:14px;padding:20px 22px;margin-bottom:18px;
+-webkit-mask:radial-gradient(circle 11px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat;
+mask:radial-gradient(circle 11px at 0 62%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 11px at 100% 62%,#0000 98%,#000) right/51% 100% no-repeat}
+.ticket small{font-weight:600}.ticket .big{font-family:"Frank Ruhl Libre",Georgia,serif;font-weight:900;font-size:76px;line-height:1;margin:2px 0}
+.ticket .big span{font-size:22px;font-family:Heebo,sans-serif;font-weight:700;margin-inline-start:8px}.ticket .nm{font-weight:700;font-size:19px}
+.ticket .cut{border-top:2px dashed #14213d55;margin:14px 0}.ticket .btn{width:100%}
+.card{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--k,var(--navy));border-radius:14px;padding:14px;margin-bottom:10px}
+.card.closed{opacity:.6}.card h3{margin:0;font-size:16px}.sub{color:var(--mute);font-size:13px}
+.row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.pill{padding:3px 10px;border-radius:99px;font-weight:700;font-size:13px;white-space:nowrap}
+.g{background:var(--gb);color:var(--g)}.a{background:var(--ab);color:var(--a)}.r{background:var(--rb);color:var(--r)}.z{background:var(--line);color:var(--mute)}
+.num{font-family:"Frank Ruhl Libre",serif;font-weight:900;font-size:26px;line-height:1}
+.src{font-size:12px;color:var(--mute);margin:8px 0}
+.acts{display:flex;gap:7px}.acts .btn{flex:1;padding:9px 6px;font-size:13px}
+dialog{border:0;border-radius:20px 20px 0 0;padding:20px;width:100%;max-width:560px;margin:auto auto 0;background:var(--card);color:var(--ink);max-height:92vh}
+dialog::backdrop{background:#0009}dialog h2{font-family:"Frank Ruhl Libre",Georgia,serif;margin:0;font-size:24px}
+.sec{margin-top:16px}.sec h4{margin:0 0 8px;font-size:15px}.chips{display:flex;flex-wrap:wrap;gap:6px}
+.step{display:flex;align-items:center;justify-content:center;gap:18px;margin:10px 0}
+.step button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:22px;cursor:pointer}
+.step output{font-family:"Frank Ruhl Libre",serif;font-size:48px;font-weight:900;min-width:70px;text-align:center}
+.two{display:flex;gap:8px;margin-top:12px}.two>*{flex:1}.ok{background:var(--gb);color:var(--g);padding:10px 12px;border-radius:10px;font-weight:600;margin-top:10px}
+.cl{max-height:40vh;overflow:auto;margin-top:8px}.ci{display:flex;justify-content:space-between;padding:10px 8px;border-radius:10px;cursor:pointer;width:100%;background:none;border:0;text-align:start}
+.ci[aria-pressed=true]{background:var(--navy);color:#fff}
+.toast{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);background:var(--navy);color:#fff;border-radius:12px;padding:12px 18px;display:none;z-index:50}
+.empty{text-align:center;color:var(--mute);padding:30px 0}
+</style></head><body>
+<main>
+<div class="hd"><div class="logo" style="background:#5B21B6;display:grid;place-items:center;overflow:hidden"><img src="logo.png" alt="תור חי" style="width:30px;height:30px;object-fit:contain;"></div><div class="t"><b>תור חי</b><small>76 ערים · תור מתעדכן כל 3 דק׳</small></div><button class="ib" data-a="refresh" aria-label="רענן">↻</button><button class="ib" data-a="gps" aria-label="זהה מיקום">◎</button></div>
+<h1>הולכים כשהתור שקט.</h1>
+<div class="loc"><span aria-hidden="true">📍</span><div class="c"><span id="lt">פתח תקווה</span><small id="ls">טוען סניפים...</small></div><span class="live" id="lu">LIVE</span><button class="lnk" data-a="area">שנה</button></div>
+<div class="fl" id="fl">
+<button class="chip" data-f="near">קרוב אלי</button><button class="chip" data-f="kupa">קופות חולים</button><button class="chip" data-f="post">דואר ישראל</button><button class="chip" data-f="nation">כל הארץ</button><button class="chip" data-f="open">רק פתוח עכשיו</button><button class="chip" data-f="fast">הכי מהיר</button></div>
+<input class="srch" id="q" type="search" placeholder="חיפוש סניף...">
+<div class="meta"><span id="oc">טוען...</span><span id="fs"></span></div>
+<div id="mine"></div><div id="best"></div><div id="list"></div>
+</main>
+<dialog id="dlg"></dialog><div class="toast" id="toast"></div>
+<script>
+var cities="אופקים,אור יהודה,אור עקיבא,אילת,אלעד,אריאל,אשדוד,אשקלון,באקה אל-גרביה,באר שבע,בית שאן,בית שמש,ביתר עילית,בני ברק,בת ים,גבעת שמואל,גבעתיים,דימונה,הוד השרון,הרצליה,חריש,חדרה,חולון,חיפה,טבריה,טייבה,טירה,טירת כרמל,יבנה,יהוד,יקנעם,ירושלים,כפר יונה,כפר סבא,כפר קאסם,כרמיאל,לוד,מגדל העמק,מודיעין,מעלה אדומים,מעלות תרשיחא,נהריה,נוף הגליל,נצרת,נשר,נתיבות,נתניה,סכנין,עכו,עפולה,עראבה,ערד,פרדס חנה,פתח תקווה,צפת,קלנסווה,קריית אונו,קריית אתא,קריית ביאליק,קריית גת,קריית ים,קריית מוצקין,קריית מלאכי,קריית שמונה,ראש העין,ראש פינה,ראשון לציון,רהט,רחובות,רמלה,רמת גן,רמת השרון,רעננה,שדרות,שפרעם,תל אביב".split(",");
+var big="תל אביב,ירושלים,חיפה,פתח תקווה,באר שבע,ראשון לציון,אשדוד,נתניה,רמת גן,חולון,אשקלון,רחובות,בת ים,בני ברק,כפר סבא,רעננה,הרצליה,מודיעין,חדרה,רמלה,לוד".split(",");
+/* [open, close, close on Wed, close on Fri]; Saturday closed */
+var H={"דואר":[8,18,13.5,12.5],"כללית":[7.5,19,19,12.5],"מכבי":[7,20,20,13],"מאוחדת":[8,19,19,12],"לאומית":[8,18,18,12]};
+var KC={"כללית":"#F59E0B","מכבי":"#3B82F6","מאוחדת":"#10B981","לאומית":"#EF4444","דואר":"#8B5CF6"};
+var SERV={"דואר":["אשנב כל","מטבע חוץ","העברת בעלות רכב","משלוחים וחבילות"],"קופ״ח":["רופא משפחה","בדיקות דם","מרשמים"]};
+function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
+/* NOTE: branch list is generated demo data. Replace allBranches with your real branch list (name, address, postId of the real Israel Post branch). */
+var all=[],pid=1000;
+(function(){var st=["הרצל","בן גוריון","רוטשילד","העצמאות","ויצמן","ביאליק","ז'בוטינסקי","ההגנה","השלום","בגין","רבין","הנשיא"],dir=["מרכז","צפון","דרום","מזרח"];
+cities.forEach(function(c,ci){var B=big.indexOf(c)>-1;
+ [["דואר",B?4:2],["כללית",B?4:2],["מכבי",B?3:2],["מאוחדת",B?2:1],["לאומית",B?2:1]].forEach(function(x){
+  for(var i=0;i<x[1];i++){var k=x[0],id=k+"-"+ci+"-"+i,h=hash(id);
+   all.push({id:id,city:c,type:k==="דואר"?"דואר":"קופ״ח",kupa:k==="דואר"?null:k,n:(k==="דואר"?"דואר":k)+" - "+c+(x[1]>1?" "+dir[i%4]:""),ad:st[h%12]+" "+(h%120+1)+", "+c,postId:k==="דואר"?String(pid++):null,hrs:H[k]})}})})})();
+function status(b){var d=new Date(),w=d.getDay(),t=d.getHours()+d.getMinutes()/60,h=b.hrs;if(w===6)return{o:false,t:"סגור היום"};
+ var cl=w===3?h[2]:w===5?h[3]:h[1];if(t>=h[0]&&t<cl)return{o:true,t:"פתוח עד "+Math.floor(cl)+":"+(cl%1?"30":"00")};
+ return t<h[0]?{o:false,t:"נפתח ב-"+h[0]+":00"}:{o:false,t:"סגור עכשיו"}}
+var RC={},RF={},reports={},mine=null,S={city:"פתח תקווה",f:{},q:""},cur=null,pick=null,cnt=0,dlg=document.getElementById("dlg");
+try{reports=JSON.parse(localStorage.getItem("torhai_reports_v3")||"{}");mine=JSON.parse(localStorage.getItem("torhai_mine")||"null")}catch(e){}
+function save(){try{localStorage.setItem("torhai_reports_v3",JSON.stringify(reports));localStorage.setItem("torhai_mine",JSON.stringify(mine))}catch(e){}}
+function fetchReal(b){if(!b.postId)return;var n=Date.now();if(RC[b.id]&&n-RC[b.id].t<180000||RF[b.id])return;RF[b.id]=1;
+ fetch("/.netlify/functions/tor?branchId="+b.postId).then(function(r){return r.json()}).then(function(d){RC[b.id]={d:d,t:Date.now()};render()}).catch(function(){}).finally(function(){RF[b.id]=0})}
+function fetchAll(){var n=0;all.forEach(function(b){if(b.type==="דואר"&&b.city===S.city){fetchReal(b);n++}});
+ var u=document.getElementById("lu");u.textContent="בודק "+n;setTimeout(function(){u.textContent=new Date().toLocaleTimeString("he-IL",{hour:"2-digit",minute:"2-digit"})},2000)}
+function lv(p){return p<=2?["g","עומס נמוך"]:p<=5?["a","בינוני"]:["r","גבוה"]}
+function qd(b){var now=Date.now(),cr=(reports[b.id]||[]).filter(function(r){return now-r.time<1800000});reports[b.id]=cr;
+ var avg=null;if(cr.length){avg=Math.round(cr.reduce(function(s,r){return s+r.people},0)/cr.length)}
+ var c=RC[b.id],p,w,src,nextT=null;
+ if(c&&c.d){var d=c.d;p=d.peopleEstimate||2;w=d.nextSlotMinutes||10;nextT=d.nextSlotTime||null;src=d.isReal?"תור חי אמיתי · "+new Date(c.t).toLocaleTimeString("he-IL"):(d.source||"הערכה");
+  if(avg!==null){p=Math.round(p*.3+avg*.7);w=Math.round(p*4.5);src="תור חי + "+cr.length+" דיווחים"}else if(d.isReal&&!w)w=10}
+ else{if(b.postId)fetchReal(b);var d2=new Date(),h=d2.getHours(),r=hash(b.id+h+Math.floor(d2.getMinutes()/3));
+  p=(h>=9&&h<=11)||(h>=15&&h<=16)?6+r%4:h>=12&&h<=14?3+r%2:1+r%2;w=p*4;src=b.postId?"טוען נתונים מהשרת...":"הערכה לפי שעה";
+  if(avg!==null){p=Math.round(p*.4+avg*.6);w=Math.round(p*4.5);src=cr.length+" דיווחים מהשטח · ממוצע "+avg}}
+ var L=lv(p);return{p:p,w:w,c:L[0],t:L[1],src:src,real:!!(c&&c.d&&c.d.isReal),slots:c&&c.d&&c.d.slots}}
+function fmt(d){return d.toLocaleTimeString("he-IL",{hour:"2-digit",minute:"2-digit"})}
+function render(){var f=S.f,nat=f.nation,q=S.q.toLowerCase();
+ var pool=all.filter(function(b){return nat||b.city===S.city});
+ var rows=pool.filter(function(b){if(f.kupa&&b.type!=="קופ״ח")return false;if(f.post&&b.type!=="דואר")return false;if(f.open&&!status(b).o)return false;
+  if(q&&(b.n+b.ad+(b.kupa||"")).toLowerCase().indexOf(q)<0)return false;return true}).map(function(b){return{b:b,s:status(b),d:qd(b)}});
+ if(nat)rows=rows.slice(0,40);
+ rows.sort(function(x,y){return f.fast?x.d.p-y.d.p:(y.s.o-x.s.o)});
+ var open=pool.filter(function(b){return status(b).o}).length,top=rows.filter(function(x){return x.s.o}).sort(function(x,y){return x.d.p-y.d.p})[0];
+ document.getElementById("lt").textContent=nat?"כל הארץ":S.city;document.getElementById("ls").textContent=pool.length+" סניפים";
+ document.getElementById("oc").textContent=open+" פתוחים · "+pool.length+" סה״כ";
+ document.getElementById("fs").textContent=top?top.b.n.split(" - ")[0]+" הכי מהיר ("+top.d.p+")":"";
+ document.getElementById("mine").innerHTML=mine?'<div class="mine">התור שלך: '+mine.time+" ב"+mine.name+" · "+mine.svc+"</div>":"";
+ document.querySelectorAll("[data-f]").forEach(function(e){e.setAttribute("aria-pressed",!!f[e.dataset.f])});
+ var best=document.getElementById("best"),list=document.getElementById("list");
+ if(!rows.length){best.innerHTML="";list.innerHTML='<div class="empty">אין תוצאות. שנו סינון או עיר.</div>';return}
+ best.innerHTML=top?'<div class="ticket"><small>הכי כדאי עכשיו</small><div class="big">'+top.d.w+'<span>דקות המתנה</span></div><div class="nm">'+top.b.n+'</div><div class="sub" style="color:#14213dcc">'+top.d.p+" בתור · "+top.d.src+'</div><div class="cut"></div><button class="btn" data-a="book" data-id="'+top.b.id+'">שעות פנויות והזמנה</button></div>':"";
+ list.innerHTML=rows.filter(function(x){return!top||x.b!==top.b}).map(function(x){var b=x.b,d=x.d,s=x.s,po=b.type==="דואר";
+  return'<div class="card'+(s.o?"":" closed")+'" style="--k:'+KC[b.kupa||"דואר"]+'"><div class="row"><div><h3>'+b.n+'</h3><div class="sub">'+b.ad+'</div><div class="sub">'+s.t+(b.kupa?" · "+b.kupa:"")+'</div></div><div style="text-align:end"><div class="num">'+d.p+'</div><span class="pill '+(s.o?d.c:"z")+'">'+(s.o?d.t:"סגור")+'</span></div></div><div class="src">'+d.w+" דק׳ המתנה משוערת · "+d.src+'</div><div class="acts"><button class="btn line" data-a="nav" data-id="'+b.id+'">ניווט</button><button class="btn line" data-a="rep" data-id="'+b.id+'">דיווח</button><button class="btn" data-a="book" data-id="'+b.id+'">'+(po?"תור בקליק":"קח תור")+'</button></div></div>'}).join("")}
+function get(id){return all.filter(function(b){return b.id===id})[0]}
+function open_(h){dlg.innerHTML=h;if(!dlg.open)dlg.showModal()}
+function toast(t){var e=document.getElementById("toast");e.textContent=t;e.style.display="block";setTimeout(function(){e.style.display="none"},3000)}
+function sheet(){var b=cur,d=qd(b),s=status(b),free=[];
+ if(s.o){if(d.slots&&d.slots.length)d.slots.slice(0,10).forEach(function(x){free.push(x)});else{var t=new Date(Date.now()+d.w*60000);t.setSeconds(0,0);t.setMinutes(Math.ceil(t.getMinutes()/5)*5);for(var i=0;i<8;i++)free.push(fmt(new Date(t.getTime()+i*300000)))}}
+ if(!pick||free.indexOf(pick.time)<0)pick={time:free[0],svc:SERV[b.type][0]};
+ open_('<button class="lnk" data-a="close" style="float:inline-end">סגור</button><h2>'+b.n+'</h2><div class="sub">'+b.ad+" · "+s.t+'</div><div class="sec"><h4>שעות פנויות</h4><div class="chips">'+(free.length?free.map(function(f){return'<button class="chip" data-t="'+f+'" aria-pressed="'+(f===pick.time)+'">'+f+"</button>"}).join(""):"אין תורים פנויים כרגע")+'</div></div><div class="sec"><h4>לאיזה שירות?</h4><div class="chips">'+SERV[b.type].map(function(v){return'<button class="chip" data-v="'+v+'" aria-pressed="'+(v===pick.svc)+'">'+v+"</button>"}).join("")+'</div></div><button class="btn gold" data-a="confirm" style="width:100%;margin-top:14px"'+(free.length?"":" disabled")+'>הזמן תור ל-'+(pick.time||"")+'</button><div id="msg"></div><div class="two"><button class="btn line" data-a="nav" data-id="'+b.id+'">ניווט</button><button class="btn line" data-a="rep" data-id="'+b.id+'">כמה אנשים לפניך?</button></div>')}
+function report(){var b=cur;open_('<button class="lnk" data-a="close" style="float:inline-end">ביטול</button><h2>דיווח מהשטח</h2><div class="sub">'+b.n+'</div><div class="sec"><h4>כמה אנשים ממתינים לפניך?</h4><div class="step"><button data-a="minus" aria-label="פחות">−</button><output id="cnt">'+cnt+'</output><button data-a="plus" aria-label="יותר">+</button></div></div><div class="two"><button class="btn line" data-a="close">ביטול</button><button class="btn" data-a="send">שלח דיווח</button></div>')}
+function area(f){var h='<button class="lnk" data-a="close" style="float:inline-end">סגור</button><h2>בחירת אזור</h2><div class="sub">76 ערים · '+all.length+' סניפים</div><input class="srch" id="cq" type="search" placeholder="חפשי עיר..." value="'+(f||"")+'" style="margin-top:10px"><div class="cl">';
+ cities.filter(function(c){return!f||c.indexOf(f)>-1}).forEach(function(c){var n=all.filter(function(b){return b.city===c}).length;h+='<button class="ci" data-c="'+c+'" aria-pressed="'+(c===S.city)+'"><span>'+c+"</span><span>"+n+"</span></button>"});
+ open_(h+'</div><div class="two"><button class="btn line" data-a="close">סגור</button><button class="btn" data-a="gps">זהה מיקום</button></div>');var i=document.getElementById("cq");if(f){i.focus();i.setSelectionRange(f.length,f.length)}}
+var CEN={"פתח תקווה":[32.087,34.887],"תל אביב":[32.085,34.782],"ירושלים":[31.768,35.214],"חיפה":[32.794,34.99],"באר שבע":[31.253,34.791],"רמת גן":[32.082,34.81],"ראשון לציון":[31.964,34.804],"הרצליה":[32.162,34.844],"נתניה":[32.321,34.853],"אשדוד":[31.804,34.655],"אשקלון":[31.669,34.571],"רחובות":[31.895,34.811],"חולון":[32.01,34.779],"בת ים":[32.023,34.75],"רעננה":[32.184,34.871],"כפר סבא":[32.174,34.91],"מודיעין":[31.897,35.01],"אילת":[29.558,34.952]};
+function locate(){dlg.close();document.getElementById("ls").textContent="מזהה מיקום...";if(!navigator.geolocation){return}
+ navigator.geolocation.getCurrentPosition(function(p){var best,bd=1e9;Object.keys(CEN).forEach(function(c){var dx=(CEN[c][0]-p.coords.latitude)*111,dy=(CEN[c][1]-p.coords.longitude)*94,d=dx*dx+dy*dy;if(d<bd){bd=d;best=c}});setCity(best)},function(){render();toast("לא הצלחנו לאתר מיקום. אפשר לבחור עיר ידנית.")},{timeout:5000,maximumAge:60000})}
+function setCity(c){S.city=c;S.f.nation=0;try{localStorage.setItem("torhai_last_city",c)}catch(e){}render();setTimeout(fetchAll,300)}
+document.addEventListener("click",function(e){var t=e.target,f=t.closest("[data-f]"),a=t.closest("[data-a]"),c=t.closest("[data-c]"),tm=t.closest("[data-t]"),sv=t.closest("[data-v]");
+ if(f&&!dlg.contains(f)){var k=f.dataset.f;if(k==="kupa"||k==="post"){var on=!S.f[k];S.f.kupa=S.f.post=0;S.f[k]=on?1:0}else if(k==="near"){S.f.nation=0;S.f.kupa=S.f.post=0;locate()}else S.f[k]=S.f[k]?0:1;render();return}
+ if(c){dlg.close();setCity(c.dataset.c);return}
+ if(tm){pick.time=tm.dataset.t;sheet();return}if(sv){pick.svc=sv.dataset.v;sheet();return}
+ if(!a)return;var k2=a.dataset.a,id=a.dataset.id;
+ if(k2==="close")dlg.close();
+ else if(k2==="refresh"){fetchAll();render()}
+ else if(k2==="gps")locate();
+ else if(k2==="area")area();
+ else if(k2==="book"){cur=get(id);pick=null;sheet()}
+ else if(k2==="confirm"){mine={name:cur.n,time:pick.time,svc:pick.svc};save();render();sheet();document.getElementById("msg").innerHTML='<div class="ok">התור נקבע ל-'+pick.time+" · "+pick.svc+"</div>"}
+ else if(k2==="nav"){cur=get(id);open_('<h2>'+cur.n+'</h2><div class="sub">'+cur.ad+'</div><div class="two"><button class="btn line" data-a="close">סגור</button><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(cur.n+" "+cur.ad)+'">פתח במפות</a></div>')}
+ else if(k2==="rep"){cur=get(id);cnt=Math.min(qd(cur).p,60);report()}
+ else if(k2==="minus"){cnt=Math.max(0,cnt-1);document.getElementById("cnt").textContent=cnt}
+ else if(k2==="plus"){cnt=Math.min(60,cnt+1);document.getElementById("cnt").textContent=cnt}
+ else if(k2==="send"){(reports[cur.id]=reports[cur.id]||[]).push({people:cnt,time:Date.now()});save();dlg.close();toast("תודה! דיווחת "+cnt+" אנשים");render()}});
+document.addEventListener("input",function(e){if(e.target.id==="q"){S.q=e.target.value.trim();render()}if(e.target.id==="cq")area(e.target.value.trim())});
+try{var sc=localStorage.getItem("torhai_last_city");if(sc)S.city=sc}catch(e){}
+render();fetchAll();setInterval(function(){if(!dlg.open){fetchAll();render()}},180000);
+</script></body></html>
